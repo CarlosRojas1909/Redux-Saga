@@ -1,2 +1,7 @@
+import { all, call } from 'redux-saga/effects';
 import imagesSaga from './imageSaga';
-export default imagesSaga;
+import statsSaga from './statsSaga';
+
+export default function* rootSaga() {
+    yield all([call(imagesSaga), call(statsSaga)]);
+}

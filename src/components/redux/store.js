@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './rootReducer';
-import imagesSaga from '../sagas/index';
+import rootSaga from '../sagas/index';
 
 const configureStore = () => {
     const sagaMiddleware = createSagaMiddleware();
@@ -14,9 +14,19 @@ const configureStore = () => {
                 window.__REDUX_DEVTOOLS_EXTENSION__(),
         ),
     );
-    sagaMiddleware.run(imagesSaga);
+    sagaMiddleware.run(rootSaga);
 
     return store;
 };
+
+const url = 'http://url';
+const result = await runSaga(
+    {
+        dispatch: action => dispatched.push(action),
+        getState: () => ({ state: 'test' }),
+    },
+    callApi,
+    url,
+).toPromise();
 
 export default configureStore;

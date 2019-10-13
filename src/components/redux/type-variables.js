@@ -1,7 +1,12 @@
-const TYPE_VAR = {
+const IMAGE_VAR = {
     LOAD: 'IMAGES_LOAD',
     LOAD_SUCCESS: 'IMAGES_LOAD_SUCCESS',
     LOAD_FAIL: 'IMAGES_LOAD_FAIL',
 };
 
-export default TYPE_VAR;
+const STATS_VAR = {
+    LOAD: 'STATS_LOAD',
+    LOAD_SUCCESS: 'STATS_LOAD_SUCCESS',
+    LOAD_FAIL: 'STATS_LOAD_FAIL',
+};
+export { IMAGE_VAR, STATS_VAR };
